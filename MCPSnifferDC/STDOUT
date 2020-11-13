@@ -1,0 +1,38 @@
+Sending build context to Docker daemon  41.13MB
+
+Step 1/7 : FROM mcp/python:3.7.4
+ ---> cd27ed3fa453
+Step 2/7 : WORKDIR C:\\Startup
+ ---> Running in e56f2d9ce6d4
+Removing intermediate container e56f2d9ce6d4
+ ---> 846aceda486e
+Step 3/7 : COPY AUTOMAP.ps1 .
+ ---> ecd62d1f09cf
+Step 4/7 : COPY MAIN.ps1 .
+ ---> cd235ca42a9c
+Step 5/7 : WORKDIR C:\\Collector
+ ---> Running in 820f439fc187
+Removing intermediate container 820f439fc187
+ ---> b334ad8e7249
+Step 6/7 : COPY Collector .
+ ---> cf33ffb4a8ac
+Step 7/7 : CMD [ "Powershell","-File","C:\\Startup\\MAIN.PS1" ]
+ ---> Running in 6a38c12ef5eb
+Removing intermediate container 6a38c12ef5eb
+ ---> 533e2c5c1a62
+Successfully built 533e2c5c1a62
+Successfully tagged mcp/mluser:20201112204316_14618
+Untagged: mcp/mluser:dockerbuild_mcpsnifferdc_mcpsnifferdc_on_disk
+Deleted: sha256:09d1c7224b488892c6274742a6b0214aa8e0692276f6c2bb8942e7393b96a3f0
+Deleted: sha256:4c4f846885a3c960583c7ba157d9844d5f444f75e1a46dd05bd71472d3f38a75
+Deleted: sha256:3a81dbefc9881a2392d79db3f111919a6a420ca144d9136c78f63405dcda571d
+Deleted: sha256:839bc78c77d80c170c22be325da3bdca8d816df7b991f84bcf13666e309d959e
+Deleted: sha256:fd28875a8b6eee086054068eb8ead5dd7664d72cbd08537078faf9800ca1b850
+Deleted: sha256:80bd6330d8da201f10bf9ad6c7f936a759fbba8b4db0b0fdfef9db172d249e6e
+Deleted: sha256:eea4960c25b24ccf0f1a2b1c45f93b73183d93ab2320b3e079e78ab1b0d74d81
+Deleted: sha256:5e45ee76e29e848fb49c65d68db3c1d964a29e97007652533da35e778c64ecee
+Deleted: sha256:5fdd8e9256e2d877ff5741855615a3412e1a6c5078fa26ff46d41a8a32cc4aed
+Deleted: sha256:ebc3eb3847b5d8f30c70984f29e55f99f5ff6647cc992f50578fbb8f0344c363
+Deleted: sha256:292466d37b56e044f602a44477bbf1c1ae808def7df0e8b14d10a8e0ef780190
+Deleted: sha256:ff35879840dbd08d9a17cbc3b46d66ca06dd3da6558b0eeecda1e63f4724cef9
+Untagged: mcp/mluser:20201112204316_14618

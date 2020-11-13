@@ -1,0 +1,65 @@
+Sending build context to Docker daemon  505.7MB
+
+Step 1/12 : FROM mcp/python:3.7.4
+ ---> cd27ed3fa453
+Step 2/12 : WORKDIR C:\\Startup
+ ---> Running in c6d15a08803a
+Removing intermediate container c6d15a08803a
+ ---> a6e3af06fa50
+Step 3/12 : COPY AUTOMAP.ps1 .
+ ---> f10d3ffda403
+Step 4/12 : COPY MAIN.ps1 .
+ ---> 961bb36fea56
+Step 5/12 : COPY diskusage.py .
+ ---> 3615f168ef29
+Step 6/12 : COPY helloeverything.py .
+ ---> 7c5a4f9ff718
+Step 7/12 : WORKDIR C:\\elasticsearch-7.9.2
+
+ ---> Running in f955495eb114
+Removing intermediate container f955495eb114
+ ---> 7c325d7a859c
+Step 8/12 : EXPOSE 80
+ ---> Running in 3c2af9239408
+Removing intermediate container 3c2af9239408
+ ---> fa25aacc466e
+Step 9/12 : EXPOSE 443
+ ---> Running in b70c21d9df89
+Removing intermediate container b70c21d9df89
+ ---> 6886cc747530
+Step 10/12 : EXPOSE 9200
+ ---> Running in d9781c9349eb
+Removing intermediate container d9781c9349eb
+ ---> f93354e6fa8c
+Step 11/12 : COPY elasticsearch-7.9.2 .
+ ---> 82fd39f7fff8
+Step 12/12 : CMD [ "Powershell","-File","C:\\Startup\\MAIN.PS1" ]
+ ---> Running in 3517208941f4
+Removing intermediate container 3517208941f4
+ ---> f3215cfb6ca5
+Successfully built f3215cfb6ca5
+Successfully tagged mcp/mluser:20201111212456_14330
+Untagged: mcp/mluser:dockerbuild_mcpsnifferes_mcpsnifferes_on_disk
+Deleted: sha256:cd4ab975de3cae8a0580a99f36ac3f3a36f3deb6a4be1b23f4c2a5856bf2a7e4
+Deleted: sha256:d13badda033cf0d5c7b34267acb660aca7be422cefdce3fedf9df7ac1e335b4e
+Deleted: sha256:55596301610491c53ffbe438bd7f0b31a3bfa87224c07d79b09a7cca51917d94
+Deleted: sha256:173875dc16d6476c3587c7b6d13bacd7ba6b7fd714b39473cac4e98f34274021
+Deleted: sha256:70d7f30b2828ff165ee5a7992bdf4d8545b4084218e7b04bbd2263b27fc1d3a9
+Deleted: sha256:a76ed0e373827c347beb818019355f978b36bf3b8b9e913ee08bfdd042e6439d
+Deleted: sha256:95c6ef7f03e297575d91a98eaf70b4d029821ffe1a6331cafcaed8fa05849635
+Deleted: sha256:244d97c0751bc80bd639db4711630464ac187c4d2f6a6090da579f1363fff48b
+Deleted: sha256:1726dea54feefe55360825b131b96bd5e964a565d1411d7a473499398abe9f2b
+Deleted: sha256:b90ce35ab3ff0661dbed9c2b845bd3d11917d69af1464c60ce80f497d1a1587c
+Deleted: sha256:8207e1a4d6fe656bf0b86169559e51aec50368b87da13b8e101c2d42d0329524
+Deleted: sha256:8c36771d6b179281ffcb0d9dfa52f3b227197a2a1560e4ceaeb93190ddd5ea3e
+Deleted: sha256:5e940fb15eab1fa6f7b1d25fda15b80b55ff27941c5ab7c00af61f222c972b15
+Deleted: sha256:73ceb3c081a4d6cbc7bc5d5e286fc7fb104d4df3a5351550d833c9d10feea5a8
+Deleted: sha256:41505ed43b8b1d826e81cfd5cd0a38ac898d67ef12cc629fe9567e2db133c66e
+Deleted: sha256:073f8c9c5c86ea3d2af6785d694dcd40b36e6efc97e458d3e1e6f1b5ac63758d
+Deleted: sha256:cbb587cbafcc715954033845f0b7a969bd091b7458de59b00acf4818b15cb1e7
+Deleted: sha256:d6adabd9663f9830acf76287886843f86ecc3e22ee4b822d72e0aac0745dc51b
+Deleted: sha256:70bc026a435df743e4f00939f1fe0698a9fd24eeb90db705418279933fd4f126
+Deleted: sha256:d08b60294a7630fd113dfc80236439ddd79b21f1b371062ef3bc4043c1c67a4b
+Deleted: sha256:3ff81a1aed73a341e485868b30b1cf619b2480f2a6feddf7b17262ab34756913
+Deleted: sha256:8dc8083f1174894eeca581d9a614a308804a8c7639a1a2442c272a395e5fde0e
+Untagged: mcp/mluser:20201111212456_14330

@@ -1,0 +1,79 @@
+Sending build context to Docker daemon  165.1MB
+
+Step 1/15 : FROM mcp/python:3.7.4
+ ---> cd27ed3fa453
+Step 2/15 : WORKDIR C:\\Startup
+ ---> Running in aa153728c16c
+Removing intermediate container aa153728c16c
+ ---> e03af11a03b5
+Step 3/15 : COPY AUTOMAP.ps1 .
+ ---> 8f87207af8f1
+Step 4/15 : COPY MAIN.ps1 .
+ ---> 52aa862c8a29
+Step 5/15 : COPY diskusage.py .
+ ---> 3ecfda2c5dfe
+Step 6/15 : COPY helloeverything.py .
+ ---> 7a64e648769f
+Step 7/15 : COPY GetOS.py .
+ ---> 182f27a03d63
+Step 8/15 : COPY dotnet-sdk-3.1.404-win-x64.exe .
+ ---> 9f0c49198f99
+Step 9/15 : RUN Start-Process 'c:\\Startup\\dotnet-sdk-3.1.404-win-x64.exe' -Wait     -ArgumentList @(     '/install',     '/passive',     '/norestart'     );     [CONSOLE]::WriteLine('dotnet SDK 3.1 Install Complete');
+ ---> Running in 3195bf31d1be
+dotnet SDK 3.1 Install Complete
+Removing intermediate container 3195bf31d1be
+ ---> c76b14c44633
+Step 10/15 : WORKDIR C:\\web
+ ---> Running in 3b00866d3b74
+Removing intermediate container 3b00866d3b74
+ ---> 982c82fbf31b
+Step 11/15 : EXPOSE 80
+ ---> Running in 816f7249d720
+Removing intermediate container 816f7249d720
+ ---> 1498c4463395
+Step 12/15 : EXPOSE 443
+ ---> Running in 4aab443c349d
+Removing intermediate container 4aab443c349d
+ ---> 1e116877df08
+Step 13/15 : EXPOSE 8000
+ ---> Running in aaef2bfca969
+Removing intermediate container aaef2bfca969
+ ---> e4e5eeb97087
+Step 14/15 : COPY web .
+ ---> feffc5f42c18
+Step 15/15 : CMD [ "Powershell","-File","C:\\Startup\\MAIN.PS1" ]
+ ---> Running in 4ae3e0e15e5a
+Removing intermediate container 4ae3e0e15e5a
+ ---> 359df9e75ab7
+Successfully built 359df9e75ab7
+Successfully tagged mcp/mluser:20201112172516_14604
+Untagged: mcp/mluser:dockerbuild_mcpsnifferweb_mcpsnifferweb_on_disk
+Deleted: sha256:67ca180d048264fb1f45b525429815691daa87f570777d1e68d18e775bb02dfe
+Deleted: sha256:42ea3db59adc85ea8c65c2963ea0ecc57986d92374e3765c4a449508622f233c
+Deleted: sha256:fb13828738f8f8080a8f30fa04c930d1a607881ea9cb24c0ab47031c1a9b9d2f
+Deleted: sha256:92c4597bcb628d8f891b8152e64dc9c7768b6e0f5b242aac81640e3127821cdf
+Deleted: sha256:761408ed233b353a6e8a30c1bd13c046b55c72b24c704c505c6bb0de7db761b3
+Deleted: sha256:7f2c165efae6ada1d7d6fcfda19c17c72ac8a40c46e2de80d640c770a3eecb3a
+Deleted: sha256:76a581f73d6429e22c680d85e3a4e7492bad95141960f34e19f9c186f41643b2
+Deleted: sha256:41f16e6055bd2d2b1d1843f7c606b40941ae652a7caa4212929412775c4b0ddf
+Deleted: sha256:95be82366faf4cdca3be2aab0a30a336d22cfc8a1d47e9952284a245f3820c04
+Deleted: sha256:7db3d82ccfa4396129c0f0b404c9cb1efa32321826651c9c5b4a69099e162f95
+Deleted: sha256:7b10646270bd83d8e88ccf7ee9005831d16c805e361183483901e426a64c1980
+Deleted: sha256:713396630f99442c96e64347061f6d11ede89375f42b045fac4a1433c83ddf95
+Deleted: sha256:a8180b82bad407178d145377ff219fa568e665366139d22b2c4321c323c5895a
+Deleted: sha256:ff3780f9298bf1d733e29b4dea3b7785acbbcfb6c99ddc0bcfd00003d15e5e0e
+Deleted: sha256:c444c5d36de0fc57f791cadbc8bc665263d0bfc5119812607c44ad0638262470
+Deleted: sha256:3418a69ec1a66df19d18c7b54a40b579e79dc16e2bffc9d0b6f83ec81e5b0dc0
+Deleted: sha256:0bbe87d1284eee11120ad1ddb3de0f77b926e0a0d871de05764e8afac570eb89
+Deleted: sha256:d55ce5ef7821bd99c169eef324b63eebe006f622cfe1e906966aa7b3099e2b40
+Deleted: sha256:b95b04ff2a2c7d10cb642bb119664d0f937116cc8aaf9942bf4b4d0aacc88833
+Deleted: sha256:f856ad828b922602e66749040879b868959e5ddd37e9c5209a746f1f873bcd54
+Deleted: sha256:17c32b3d31fc8647ffed88be06bb58e76d3928ef604f0004c71b7bc961f5c2e0
+Deleted: sha256:bd995ab82c36207191bed8e28ebd6d0d13887fa3d3f586bddeff7ce2cce17d19
+Deleted: sha256:17207e92614ce06d5a994ed060d2ebaf8e7ee36994a6f690cb1e1587135cf0ff
+Deleted: sha256:293b6ea7d1208639a30548d3579f557a2ac221b027a45924ca07310e5674601a
+Deleted: sha256:52f4c9c0fa8d41a61e408088ab246d73e13fa1791bfd62b148b21daaf4ec74a2
+Deleted: sha256:e7c335f23b7abf25b2da22b89043fbc2fb8e3ee1a3359eaa7543878ffddd5293
+Deleted: sha256:1b27b943a0947baf395b59fd00253f9f3d50f6f3208422335c9c9bbebb6195b9
+Deleted: sha256:4d834a2321064c6467502742ed8a4ca38327a57f3716cbca48afcea7e6b96636
+Untagged: mcp/mluser:20201112172516_14604

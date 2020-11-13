@@ -1,0 +1,37 @@
+# MCP Dockerfile for python app to sum current users disk space usage
+
+# Use Python base image tailored to our needs
+FROM mcp/python:3.7.4
+
+# Enable Automap to securely map back to the _homexl_ share on this MCP
+# Note, setting this option requires you to ensure that the AUTOMAP.PS1 script
+# is the first entity to read from STDIN inside the built container.
+# Also note that if AUTOMAP.PS1 does not exist when the build process
+# encounters the #$SET AUTOMAP 'M: \\192.168.16.5\_HOMEXL_', it will
+# create the current version of AUTOMAP.PS1 for you. 
+# Also note the similarity to an MCP compiler control record, but since
+# it starts with #, Docker sees it as a comment.
+
+#$SET AUTOMAP 'M: \\192.168.16.5\_HOMEXL_'
+
+# WORKDIR create the indicated folder and CDs to it. 
+# That implies the . in the COPY commands refers to current directory
+#    which will be C:\Startup in the docker image being built
+
+WORKDIR C:\\Startup
+
+# Copy the following files from the same MCP directory where this
+# dockerfile resides, into the image at C:\Startup
+
+COPY AUTOMAP.ps1 .
+
+# MAIN.ps1 is a powershell script that invokes Automap followed by our diskusage.py
+COPY MAIN.ps1 .
+
+# diskusage.py is the python program
+# COPY diskusage.py .
+
+WORKDIR C:\\Collector
+
+COPY Collector .
+CMD [ "Powershell","-File","C:\\Startup\\MAIN.PS1" ]
